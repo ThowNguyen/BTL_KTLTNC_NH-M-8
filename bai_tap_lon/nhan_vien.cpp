@@ -127,7 +127,7 @@ public:
             cout << "Luong co ban (>0): ";
             cin >> luongCoBan;
             if (cin.fail() || luongCoBan <= 0) {
-                cout << "❌ Loi!\n";
+                cout << Loi!\n";
                 cin.clear(); cin.ignore(1000, '\n');
             }
         } while (luongCoBan <= 0);
@@ -136,7 +136,7 @@ public:
             cout << "He so luong (0 < hsl <= 10): ";
             cin >> heSoLuong;
             if (cin.fail() || heSoLuong <= 0 || heSoLuong > 10) {
-                cout << "❌ Loi!\n";
+                cout << " Loi!\n";
                 cin.clear(); cin.ignore(1000, '\n');
             }
         } while (heSoLuong <= 0 || heSoLuong > 10);
@@ -145,7 +145,7 @@ public:
             cout << "Thuong: ";
             cin >> thuong;
             if (cin.fail() || thuong < 0) {
-                cout << "❌ Loi!\n";
+                cout << " Loi!\n";
                 cin.clear(); cin.ignore(1000, '\n');
             }
         } while (thuong < 0);
@@ -154,7 +154,7 @@ public:
             cout << "Phat: ";
             cin >> phat;
             if (cin.fail() || phat < 0) {
-                cout << "❌ Loi!\n";
+                cout << " Loi!\n";
                 cin.clear(); cin.ignore(1000, '\n');
             }
         } while (phat < 0);
@@ -168,11 +168,11 @@ public:
             string t = toLower(chucVu);
 
             if (!isValidText(chucVu))
-                cout << "❌ Loi!\n";
+                cout << " Loi!\n";
             else if (t == "nv") { chucVu = "NV"; break; }
             else if (t == "ql") { chucVu = "QL"; break; }
             else if (t == "admin") { chucVu = "Admin"; break; }
-            else cout << "❌ Sai!\n";
+            else cout << " Sai!\n";
 
         } while (true);
 
@@ -183,11 +183,11 @@ public:
             string t = toLower(caLam);
 
             if (!isValidText(caLam))
-                cout << "❌ Loi!\n";
+                cout << " Loi!\n";
             else if (t == "sang") { caLam = "Sang"; break; }
             else if (t == "chieu") { caLam = "Chieu"; break; }
             else if (t == "toi") { caLam = "Toi"; break; }
-            else cout << "❌ Sai!\n";
+            else cout << " Sai!\n";
 
         } while (true);
 
@@ -197,7 +197,7 @@ public:
             cin >> soNgayTrongThang;
 
             if (cin.fail() || soNgayTrongThang < 28 || soNgayTrongThang > 31) {
-                cout << "❌ Loi!\n";
+                cout << " Loi!\n";
                 cin.clear(); cin.ignore(1000, '\n');
             }
         } while (soNgayTrongThang < 28 || soNgayTrongThang > 31);
@@ -208,7 +208,7 @@ public:
                 cout << "So ngay lam: ";
                 cin >> soNgayLam;
                 if (cin.fail() || soNgayLam < 0 || soNgayLam > soNgayTrongThang) {
-                    cout << "❌ Loi!\n";
+                    cout << " Loi!\n";
                     cin.clear(); cin.ignore(1000, '\n');
                 }
             } while (soNgayLam < 0 || soNgayLam > soNgayTrongThang);
@@ -217,13 +217,13 @@ public:
                 cout << "So ngay nghi: ";
                 cin >> soNgayNghi;
                 if (cin.fail() || soNgayNghi < 0 || soNgayNghi > soNgayTrongThang) {
-                    cout << "❌ Loi!\n";
+                    cout << " Loi!\n";
                     cin.clear(); cin.ignore(1000, '\n');
                 }
             } while (soNgayNghi < 0 || soNgayNghi > soNgayTrongThang);
 
             if (soNgayLam + soNgayNghi != soNgayTrongThang)
-                cout << "❌ Tong ngay phai = " << soNgayTrongThang << endl;
+                cout << " Tong ngay phai = " << soNgayTrongThang << endl;
             else break;
 
         } while (true);
@@ -234,13 +234,13 @@ public:
             cin >> gioTangCa;
 
             if (cin.fail() || gioTangCa < 0) {
-                cout << "❌ Loi!\n";
+                cout << " Loi!\n";
                 cin.clear(); cin.ignore(1000, '\n');
             }
             else if (gioTangCa > 100)
-                cout << "❌ Vuot 100h!\n";
+                cout << " Vuot 100h!\n";
             else if (gioTangCa > soNgayLam * 24)
-                cout << "❌ Vuot gio lam!\n";
+                cout << " Vuot gio lam!\n";
             else break;
 
         } while (true);
@@ -260,7 +260,7 @@ public:
 
         // chống overflow logic
         if (luongCoBan > 1e9 || heSoLuong > 100)
-            cout << "⚠️ Du lieu lon!\n";
+            cout << " Du lieu lon!\n";
 
         double luongChinh = luongCoBan * heSoLuong;
         double tienTangCa = gioTangCa * 50000;
@@ -268,7 +268,7 @@ public:
         double tong = luongChinh + thuong + tienTangCa - phat;
 
         if (tong < 0) {
-            cout << "⚠️ Luong am!\n";
+            cout << " Luong am!\n";
             tong = 0;
         }
 
@@ -297,85 +297,3 @@ public:
 
 
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <algorithm>
-using namespace std;
-
-// ===== CLASS CHA =====
-class ConNguoi {
-protected:
-    string ten;
-    string diaChi;
-
-public:
-    virtual void nhap() {
-        cin.ignore();
-        cout << "Ten: ";
-        getline(cin, ten);
-
-        cout << "Dia chi: ";
-        getline(cin, diaChi);
-    }
-
-    virtual void xuat() {
-        cout << "Ten: " << ten << " | Dia chi: " << diaChi;
-    }
-
-    virtual ~ConNguoi() {}
-};
-
-// ===== HỖ TRỢ =====
-bool isNumber(const string& s) {
-    if (s.empty()) return false;
-    for (char c : s) {
-        if (!isdigit(c)) return false;
-    }
-    return true;
-}
-
-// ===== CLASS NHÂN VIÊN =====
-class NhanVien : public ConNguoi {
-private:
-    string cccd;
-    string soDienThoai;
-
-public:
-    // ===== NHẬP =====
-    void nhap() override {
-        cout << "\n=== NHAP NHAN VIEN ===\n";
-        ConNguoi::nhap();
-
-        // ===== CCCD =====
-        do {
-            cout << "CCCD (12 so): ";
-            getline(cin, cccd);
-
-            if (!isNumber(cccd) || cccd.length() != 12)
-                cout << "❌ CCCD khong hop le!\n";
-            else break;
-
-        } while (true);
-
-        // ===== SĐT =====
-        do {
-            cout << "So dien thoai (10 so): ";
-            getline(cin, soDienThoai);
-
-            if (!isNumber(soDienThoai) || soDienThoai.length() != 10)
-                cout << "❌ SDT khong hop le!\n";
-            else break;
-
-        } while (true);
-    }
-
-    // ===== XUẤT =====
-    void xuat() override {
-        cout << "\n[NhanVien] ";
-        ConNguoi::xuat();
-
-        cout << " | CCCD: " << cccd
-             << " | SDT: " << soDienThoai;
-    }
-};
