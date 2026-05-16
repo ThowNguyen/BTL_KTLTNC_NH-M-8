@@ -2200,7 +2200,9 @@ void MainWindow::onLichSuHuy()
             string temp;
             while (getline(ss, temp, '|')) {
                 row.push_back(temp);
-            }
+            } // day la code co ban quyen - NGuyen Huu Tri - 6551020081 dtvt
+            // khoa sau lay bai toi 10 diem btl
+            // thi stk 23356071 acb
             if (row.size() >= 8) {
                 dsHuy.push_back(row);
             }
